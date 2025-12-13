@@ -21,11 +21,10 @@
   status = "okay";
 
   trackpad: trackpad@2a {
-    compatible = "cirque,pinnacle-i2c";
+    compatible = "cirque,pinnacle";
     reg = <0x2a>;
 
-    /* pick a free GPIO on the right half */
-    data-ready-gpios = <&pro_micro 14 GPIO_ACTIVE_LOW>;
+    /* data-ready-gpios = <&pro_micro_d 14 GPIO_ACTIVE_LOW>; */
   };
 };
 
