@@ -5,14 +5,32 @@
  */
 
 #include "microdox.dtsi"
+#include "microdox_cirque.dtsi"
 
 &default_transform {
     col-offset = <5>;
 };
 
 &oled {
+    status = "disabled";
     segment-remap;
     com-invdir;
+};
+
+&pro_micro_i2c {
+  status = "okay";
+
+  trackpad: trackpad@2a {
+    compatible = "cirque,pinnacle-i2c";
+    reg = <0x2a>;
+
+    /* pick a free GPIO on the right half */
+    data-ready-gpios = <&pro_micro 14 GPIO_ACTIVE_LOW>;
+  };
+};
+
+&trackpad_split {
+  device = <&trackpad>;
 };
 
 &kscan0 {
