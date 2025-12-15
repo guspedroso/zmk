@@ -6,9 +6,11 @@
 
 #include "microdox.dtsi"
 #include "microdox_cirque.dtsi"
+#include <input/processors.dtsi>
 
-&trackpad_listener {
+&glidepoint_listener {
   status = "okay";
+  input-processors = <&zip_xy_scaler 4 1>;
 };
 
 &kscan0 {

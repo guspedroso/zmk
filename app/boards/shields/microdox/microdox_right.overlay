@@ -13,23 +13,30 @@
 
 &oled {
     status = "disabled";
-    segment-remap;
-    com-invdir;
+};
+
+&gpio1 {
+    status = "okay";
 };
 
 &pro_micro_i2c {
   status = "okay";
 
-  trackpad: trackpad@2a {
+  glidepoint: glidepoint@2a {
     compatible = "cirque,pinnacle";
     reg = <0x2a>;
 
-    /* data-ready-gpios = <&pro_micro_d 14 GPIO_ACTIVE_LOW>; */
+    data-ready-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH)>;
+
+    sensitivity = "1x";
+    invert-y;
+    data-mode = "relative";
+    primary-tap-enable;
   };
 };
 
-&trackpad_split {
-  device = <&trackpad>;
+&glidepoint_split {
+  device = <&glidepoint>;
 };
 
 &kscan0 {
