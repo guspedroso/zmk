@@ -28,7 +28,7 @@
 
     data-ready-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH)>;
 
-    sensitivity = "2x";
+    sensitivity = "1x";
     invert-y;
     data-mode = "relative";
     primary-tap-enable;
