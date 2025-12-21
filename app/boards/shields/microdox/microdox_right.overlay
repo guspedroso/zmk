@@ -32,7 +32,6 @@
     invert-y;
     data-mode = "relative";
     primary-tap-enable;
-    idle-packets-count = <20>; 
   };
 };
 
