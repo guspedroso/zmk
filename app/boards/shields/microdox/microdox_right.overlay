@@ -26,12 +26,13 @@
     compatible = "cirque,pinnacle";
     reg = <0x2a>;
 
-    data-ready-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH)>;
+    data-ready-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH)>; // 1 and high works, low does not
 
-    sensitivity = "2x";
+    sensitivity = "2x"; // 1x and 2x work.. the rest don't, TODO: see if I lower and increase zip_xy_scaler?
     invert-y;
-    data-mode = "relative";
-    primary-tap-enable;
+    data-mode = "relative"; // needs to be relative, absolute won't work
+    primary-tap-enable; // register clicks
+    // idle-packets-count = <5>; // TODO: need to check this
   };
 };
 
