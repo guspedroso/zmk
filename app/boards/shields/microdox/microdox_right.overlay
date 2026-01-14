@@ -28,10 +28,10 @@
 
     data-ready-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH)>; // 1 and high works, low does not
 
-    sensitivity = "1x"; // 1x and 2x work.. the rest don't, TODO: see if I lower and increase zip_xy_scaler?
+    sensitivity = "1x"; // keep this on 1x, doesn't reach to edges of trackpad otherwise
     invert-y;
     data-mode = "relative"; // needs to be relative, absolute won't work
-    // primary-tap-enable; // register clicks
+    // primary-tap-enable; // register clicks, this is off and using the keyboard because its not registering taps correctly, too sensitive? unable to drag. Logs help here
     // idle-packets-count = <5>; // TODO: need to check this
   };
 };
