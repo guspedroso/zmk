@@ -13,9 +13,9 @@
   status = "okay";
   input-processors = <&zip_xy_scaler 5 2>;
 
-  /* When mouse layer is active, convert movement into scroll instead */
+  /* When scroll layer is active, convert movement into scroll instead */
   scroll_override {
-    layers = <5>; /* your MOU_LAY */
+    layers = <6>; /* your SCR_LAY */
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)
                         &zip_xy_to_scroll_mapper
                         &zip_scroll_scaler 1 16>;
